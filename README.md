@@ -134,6 +134,29 @@ Nếu gặp lỗi hoặc muốn nâng cấp thêm tính năng, hãy liên hệ t
 - **Thực hành mô phỏng:** Có thể thử các kịch bản gây nhiễu, tắt/bật tua-bin, thay đổi tham số để quan sát ảnh hưởng.
 - **Hỗ trợ quyết định:** Dashboard giúp minh họa cách hệ thống giám sát thông minh có thể hỗ trợ kỹ sư ra quyết định bảo trì đúng lúc, tiết kiệm chi phí và tăng hiệu quả vận hành.
 
+### Sơ đồ kết nối thiết bị (mạng sao)
+
+```mermaid
+graph TD;
+  Gateway(("Gateway"))
+  T1(("Tua-bin 1"))
+  T2(("Tua-bin 2"))
+  T3(("Tua-bin 3"))
+  T4(("Tua-bin 4"))
+  T5(("Tua-bin 5"))
+  T6(("Tua-bin 6"))
+  Gateway-- "Kết nối không dây" -->T1
+  Gateway-- "Kết nối không dây" -->T2
+  Gateway-- "Kết nối không dây" -->T3
+  Gateway-- "Kết nối không dây" -->T4
+  Gateway-- "Kết nối không dây" -->T5
+  Gateway-- "Kết nối không dây" -->T6
+  classDef gw fill:#636efa,stroke:#333,stroke-width:2;
+  classDef tb fill:#00cc96,stroke:#333,stroke-width:1;
+  class Gateway gw;
+  class T1,T2,T3,T4,T5,T6 tb;
+```
+
 ---
 
 **Chúc bạn sử dụng dashboard hiệu quả!** 
