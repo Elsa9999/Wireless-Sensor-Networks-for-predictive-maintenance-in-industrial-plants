@@ -85,5 +85,55 @@ Nếu gặp lỗi hoặc muốn nâng cấp thêm tính năng, hãy liên hệ t
 **Tác giả:** Liên Gia Bảo  
 **Liên hệ Zalo:** 0813104318
 
+## 9. Ý nghĩa trực quan của từng hoạt động & giao diện
+
+### Tổng quan về dashboard
+Ứng dụng này mô phỏng một hệ thống giám sát các tua-bin gió bằng mạng cảm biến không dây (WSN). Mỗi tua-bin được gắn nhiều cảm biến (độ rung, nhiệt độ, tốc độ quay, công suất...) để thu thập dữ liệu liên tục. Dữ liệu này giúp phát hiện sớm các dấu hiệu bất thường, từ đó dự đoán nguy cơ hỏng hóc và lên kế hoạch bảo trì hợp lý (bảo trì dự đoán).
+
+### Ý nghĩa từng thành phần giao diện
+
+- **Sidebar (bên trái):**
+  - **Số tua-bin:** Số lượng tua-bin gió đang được mô phỏng/giám sát.
+  - **Bước lặp (giây):** Khoảng thời gian giữa các lần cập nhật dữ liệu (giả lập thời gian thực).
+  - **Độ nhiễu (σ):** Mức độ "nhiễu" (sai số, biến động) của dữ liệu cảm biến, giúp mô phỏng thực tế.
+  - **Ngưỡng hỏng:** Nếu độ rung vượt ngưỡng này, hệ thống sẽ cảnh báo nguy cơ hỏng hóc.
+  - **Tốc độ gió:** Ảnh hưởng đến tốc độ quay và công suất của tua-bin.
+  - **Lưu tối đa điểm:** Số lượng dữ liệu lịch sử được lưu lại để vẽ biểu đồ.
+  - **Cấu hình tua-bin:** Cho phép điều chỉnh từng tua-bin (biên độ rung, pha, bật/tắt), giúp mô phỏng các tình huống khác nhau.
+  - **Gây nhiễu:** Mô phỏng sự cố hoặc bất thường trên một hoặc nhiều tua-bin để kiểm tra khả năng phát hiện cảnh báo.
+  - **Các nút điều khiển:**
+    - **Bắt đầu/Tạm dừng/Dừng/Đặt lại:** Điều khiển quá trình mô phỏng.
+
+- **Tab "Bảng điều khiển":**
+  - Hiển thị các chỉ số tổng quan: tổng công suất, số tua-bin hoạt động, % tua-bin rủi ro, thời gian mô phỏng.
+  - Biểu đồ gauge: trực quan hóa độ rung trung bình toàn hệ thống (màu xanh/vàng/đỏ tương ứng mức độ an toàn/rủi ro).
+  - Biểu đồ công suất tổng: cho thấy sự thay đổi công suất của toàn bộ hệ thống theo thời gian.
+  - Nút tải log CSV: xuất toàn bộ dữ liệu để phân tích thêm.
+
+- **Tab "Mạng WSN":**
+  - Sơ đồ mạng sao: Gateway (trung tâm) kết nối tới các tua-bin.
+  - Màu sắc node:
+    - Xanh: tua-bin hoạt động bình thường.
+    - Đỏ: tua-bin có nguy cơ hỏng hóc (vượt ngưỡng).
+    - Xám: tua-bin bị tắt.
+  - Giúp người dùng hình dung cấu trúc mạng cảm biến và trạng thái từng node.
+
+- **Tab "Chi tiết tua-bin":**
+  - Chọn tua-bin để xem chi tiết.
+  - 4 biểu đồ nhỏ: Độ rung, Nhiệt độ, RPM, Công suất theo thời gian.
+  - Hiển thị trạng thái hiện tại (ổn định/rủi ro/tắt) của tua-bin đó.
+  - Giúp phát hiện sớm tua-bin nào có dấu hiệu bất thường.
+
+- **Tab "Bảng dữ liệu":**
+  - Bảng dữ liệu mới nhất của tất cả tua-bin.
+  - Có thể hiện/ẩn lịch sử cảnh báo.
+  - Dòng tua-bin rủi ro được tô màu đỏ nhạt để dễ nhận biết.
+
+### Ý nghĩa thực tiễn
+- **Trực quan hóa dữ liệu:** Người dùng không cần hiểu sâu về bảo trì dự đoán vẫn có thể thấy được khi nào tua-bin có nguy cơ hỏng, nhờ màu sắc, cảnh báo và biểu đồ.
+- **Thực hành mô phỏng:** Có thể thử các kịch bản gây nhiễu, tắt/bật tua-bin, thay đổi tham số để quan sát ảnh hưởng.
+- **Hỗ trợ quyết định:** Dashboard giúp minh họa cách hệ thống giám sát thông minh có thể hỗ trợ kỹ sư ra quyết định bảo trì đúng lúc, tiết kiệm chi phí và tăng hiệu quả vận hành.
+
 ---
+
 **Chúc bạn sử dụng dashboard hiệu quả!** 
